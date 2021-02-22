@@ -14,6 +14,6 @@ type Mutation {
     detailAddress: String!
   ): Boolean!
 
-  tryLogin(email: String!): Boolean!
+  Login(email: String!): Boolean!
   checkSecretCode(email: String!, code: String!): LoginResult!
 }

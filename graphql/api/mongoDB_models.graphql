@@ -6,5 +6,6 @@ type User {
   nickName: String!
   zoneCode: String!
   address: String!
+  detailAddress: String!
   secretCode: String!
 }

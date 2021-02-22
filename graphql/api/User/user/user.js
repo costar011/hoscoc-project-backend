@@ -12,7 +12,7 @@ export default {
 
         console.log(tryUser.secretCode);
 
-        console.log(`input : ${code}`);
+        console.log(`INPuT : ${code}`);
 
         if (tryUser.secretCode === code) {
           await User.updateOne(
@@ -77,7 +77,7 @@ export default {
       }
     },
 
-    tryLogin: async (_, args) => {
+    Login: async (_, args) => {
       const { email } = args;
 
       try {
