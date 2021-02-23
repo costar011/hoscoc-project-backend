@@ -17,3 +17,7 @@ type Mutation {
   Login(email: String!): Boolean!
   checkSecretCode(email: String!, code: String!): LoginResult!
 }
+
+type Query {
+  searchUser(name: String!): [User!]!
+}

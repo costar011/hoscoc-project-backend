@@ -3,6 +3,19 @@ import nodemailer from "nodemailer";
 import smtpPool from "nodemailer-smtp-pool";
 
 export default {
+  Query: {
+    searchUser: async (_, args) => {
+      const { email } = args;
+
+      try {
+        const result = await User.find({ email, name, nickName });
+        return true;
+      } catch (e) {
+        console.log(e);
+        return false;
+      }
+    },
+  },
   Mutation: {
     checkSecretCode: async (_, args) => {
       const { email, code } = args;
@@ -62,12 +75,14 @@ export default {
           const result = await User.create({
             name,
             email,
-            nickName: nickName,
+            nickName,
             mobile,
-            zoneCode: zoneCode,
+            zoneCode,
             address,
             detailAddress,
           });
+
+          console.log(result);
 
           return true;
         }
