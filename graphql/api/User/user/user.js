@@ -92,7 +92,7 @@ export default {
       }
     },
 
-    Login: async (_, args) => {
+    tryLogin: async (_, args) => {
       const { email } = args;
 
       try {
